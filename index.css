@@ -1,21 +1,57 @@
 #main {
-    border: 1px solid yellow;
-    height: 400px;
-    margin-top: 200px;
-    position: relative;
+    width: 100%;
+    min-height: 500px;
+    /* height: fit-content; */
+    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
-    justify-content: center;
+}
+
+.main-divs {
+    width: 100%;
+}
+
+#one {
+    border: 3px solid red;
+    height: 70px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-
 }
 
-div {
-    height: 60px;
+.one-divs {
+    /* border: 1px solid blue; */
+    width: 30%;
+    height: 90%;
+    display: flex;
+    gap: 20px;
+    align-items: center;
 }
 
-.one {
-    border: 1px solid red;
+#one-divs-one {
+    /* border: 1px solid orange; */
+    display: flex;
+}
+
+#clock {
+    width: 48px;
+    height: 48px;
+}
+
+#day {
+    /* border: 1px solid purple; */
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    justify-content: space-around;
+    height: 100%;
+}
+
+#day h2 {
+    font-size: 10px;
+    /* border: 1px solid black; */
+    margin: 0;
 }
 
 
@@ -38,12 +74,11 @@ div {
 
 .one {
     background-color: green;
-    }
-    
-    #two {
+}
+
+#two {
     background-color: yellow;
     /* position: absolute; */
     /* top: 40px     */
     /* top: 15px; */
 }
-
