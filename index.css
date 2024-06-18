@@ -1,8 +1,13 @@
+* {
+    padding: 0;
+    box-sizing: border-box;
+    margin: 0;
+}
+
+
 #main {
     width: 100%;
     min-height: 500px;
-    /* height: fit-content; */
-    /* border: 1px solid red; */
     display: flex;
     flex-direction: column;
 }
@@ -12,7 +17,7 @@
 }
 
 #one {
-    border: 3px solid red;
+    /* border: 3px solid red; */
     height: 70px;
     display: flex;
     flex-direction: row;
@@ -55,11 +60,7 @@
 }
 
 
-* {
-    padding: 0;
-    box-sizing: border-box;
-    /* font-size: 5px; */
-}
+
 
 .one .two {
     border: 1px solid blue;
@@ -76,12 +77,6 @@
     background-color: green;
 }
 
-#two {
-    background-color: yellow;
-    /* position: absolute; */
-    /* top: 40px     */
-    /* top: 15px; */
-}
 #vegan{
     /* border: 3px solid purple; */
     /* display: flex; */
@@ -120,3 +115,75 @@
     justify-content: space-around;
   /* border: 2px solid blue; */
 }
+
+nav {
+    background-color: #19B028;  
+    height: 58px; 
+    /* padding: 10px; */
+}
+
+nav ul {
+    /* position: absolute; */
+    display: flex;
+    /* border: 1px solid red; */
+    width: 450px;
+    margin-left: 30%;
+    justify-content: space-between;
+    /* gap: 40px;     */
+}
+
+nav ul li {
+    list-style: none;
+    color: white;
+}
+
+#three {
+    border: 1px solid orangered;
+    height: 420px;
+    background: url("/public/images/hero-image-one.svg");
+    background-position: center;    
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
+
+#three :nth-child(n+1) {
+    margin-left: 200px;
+
+}
+
+
+#three h1 {
+    width: 605px;
+    height: 98px;
+    /* border: 1px solid blue; */
+    font-size: 48px;
+    margin-top: 60px;
+}
+
+#three p {
+    height: 28px;
+    width: 415px;
+    font-size: 24px;
+    margin-top: 10px;
+}
+
+#three button {
+    margin-top: 30px;
+    height: 80px;
+    width: 420px;
+    font-size: 32px;
+    background-color: #000;
+    border-radius: 5px;
+    color: #fff;  
+    text-align: center;  
+}
+
+/* Assignment:
+implement the font family
+adjust the navbar to be as close to the design as possible
+using only css and html, design the three circular buttons at the bottom of the hero section
+Design the body section of the page
+
+hint: use border bottom or border top
+ */
