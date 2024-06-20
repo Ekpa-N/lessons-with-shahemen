@@ -227,9 +227,65 @@ hint: use border bottom or border top
   margin-bottom: 10px;
  }
  #menu{
-   margin-left: 46%;
-   margin-top: 30px;
+   /* border: 2px solid red; */
+   /* width: fit-content; */
+ }
+
+ #menu-title {
+    margin-top: 40px;
+    /* border: 1px solid green; */
+    text-align: center;
+ }
+
+ #menu-items {
+    border: 1px solid purple;
+    margin-top: 10px;
+    display: flex;
+    min-height: 50px;
  }
  .dish{
-    
+    display: flex;
+    flex-direction: column; 
+    padding-left: 20px;   
  }
+
+ .dish h2 {
+    border-bottom: 3px solid blue;
+    padding-bottom: 3px;
+    width: 200px;
+ }
+
+ .dish section img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 1px solid red;
+ }
+
+ .dish section {
+    display: flex;
+    /* flex-direction: column; */
+    border: 1px solid blue;
+    margin-top: 6px;
+    align-items: center;
+ }
+
+ .dish section div {
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+ }
+
+ .dish section div h3 {
+
+ }
+
+ .dish section h1 {
+    color: red;
+    border: 1px solid green;
+    /* align-self: center; */
+    margin-left: 50px;
+ }
+
+
+
