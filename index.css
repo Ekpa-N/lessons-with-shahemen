@@ -2,6 +2,7 @@
     padding: 0;
     box-sizing: border-box;
     margin: 0;
+    font-family: "Roboto", sans-serif;
 }
 
 
@@ -83,7 +84,8 @@
     flex-direction: column;
     font-size: 10px;
     justify-content: center;
-    font-family: sans-serif;
+    margin-left: 4%;
+    
    
 }
 #h-vegan{
@@ -125,11 +127,11 @@ nav {
 nav ul {
     /* position: absolute; */
     display: flex;
-    /* border: 1px solid red; */
-    width: 450px;
-    margin-left: 30%;
-    justify-content: space-between;
-    /* gap: 40px;     */
+   
+    margin-left: 20%;
+ 
+    gap: 80px; 
+    padding-top: 15px;   
 }
 
 nav ul li {
@@ -138,7 +140,7 @@ nav ul li {
 }
 
 #three {
-    border: 1px solid orangered;
+    /* border: 1px solid orangered; */
     height: 420px;
     background: url("/public/images/hero-image-one.svg");
     background-position: center;    
@@ -148,7 +150,7 @@ nav ul li {
 }
 
 #three :nth-child(n+1) {
-    margin-left: 200px;
+    margin-left: 90px;
 
 }
 
@@ -156,7 +158,6 @@ nav ul li {
 #three h1 {
     width: 605px;
     height: 98px;
-    /* border: 1px solid blue; */
     font-size: 48px;
     margin-top: 60px;
 }
@@ -187,3 +188,48 @@ Design the body section of the page
 
 hint: use border bottom or border top
  */
+ #container{
+    position: relative; 
+    height: 300px;
+ }
+
+ #circle{
+    width: 20px; 
+    height: 20px; 
+    background-color: green;
+    border-radius: 50%; 
+    position: absolute; 
+  bottom: 0; 
+  left: 39%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+ }
+ #grey{
+    width: 20px; 
+    height: 20px; 
+    background-color:grey;
+    border-radius: 50%; 
+    position: absolute; 
+  bottom: 0; 
+  left: 42%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+ }
+ #color{
+    width: 20px; 
+    height: 20px; 
+    background-color:grey;
+    border-radius: 50%; 
+    position: absolute; 
+  bottom: 0; 
+  left: 45%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+ }
+ #menu{
+   margin-left: 46%;
+   margin-top: 30px;
+ }
+ .dish{
+    
+ }
