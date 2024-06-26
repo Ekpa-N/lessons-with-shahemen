@@ -59,17 +59,28 @@ nav ul {
     display: none;
     color: white;
     gap: 10px;
+    
+   
 }
 
-nav ul a {
+nav ul a{
     text-decoration: none;
     color: white;
+    list-style-type: none;
 }
 
 nav button {
     display: none;
+    border-radius: 5px;
+    background-color: blueviolet;
+    color: white;
 }
-
+nav ul a:hover{
+    /* color: palevioletred; */
+    transition: 0.7s;
+    padding-top: 2px;
+    border-bottom: 5px solid purple;
+}
 @media screen and (min-width: 1024px) {
     #hamburger {
         display: none;
