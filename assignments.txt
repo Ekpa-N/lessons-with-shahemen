@@ -1,1 +1,1 @@
-Apply the appropriate style on hover state to the anchor items
+Read about scopes, closures, methods and hoisting in javascript

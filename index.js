@@ -67,24 +67,40 @@ funcC(200) // "I am func C: ", parameterOne
 
 // closures and scope
 
+const globalVariable = 5 // global scope
+useGlobalScopedVariable()
+
 function useGlobalScopedVariable() {
     const functionScopedVariable = 6 // function scope
-    console.log("Global scoped variable: ", globalVariable)
     // console.log("Function scoped variable: ", functionScopedVariable)
     
     if(functionScopedVariable) {
         let blockScoped = "7" // block Scope
+        console.log("Global scoped variable: ", globalVariable)
         console.log("Function scoped variable: ", functionScopedVariable)
-        console.log("Block scoped variable: ", blockScoped)
-        
+        console.log("Block scoped variable: ", blockScoped)        
     }
 }
+
+//arrow functions cannot be hoisted
+const anArrowFunction = () => {console.log("An Arrow function")}
+// anArrowFunction()
 
 // console.log("Global scoped variable: ", functionScopedVariable)
 // unhoisted variables cannot be accessed before initialization
 
-const globalVariable = 5 // global scope
-useGlobalScopedVariable()
+// methods= a method is a function that is native(belongs)to an object
+
+const objectWithMethod = {
+    name: "Shahemen",
+    method: () => {console.log("I am a method")}
+}
+
+objectWithMethod.method()
+
+
+
+
 
 
 
