@@ -1,1 +1,1 @@
-Apply the appropriate style on hover state to the li items
+Apply the appropriate style on hover state to the anchor items
