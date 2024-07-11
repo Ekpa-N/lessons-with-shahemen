@@ -38,65 +38,96 @@ const randomNumber = 5 // variable declaration & assignment
 //  testArray.push("item 2")
 
 // Functions
+// what is a function - a set of statements that performs a task, calculates or evaluates to a value
 // function declaration vs invocation
 // declaration is the point the function is created
 // invocation is the point where it is executed
 
-const funcA = function () { // function declaration
-    console.log("I am function A")
+// operators in javascript
+// assignment operator =
+// equality operator == or ===
+
+let m // variable declaration
+m = 2 // variable assignment 
+
+let r = 4 // declaration + assignment
+
+
+// function declarations
+
+// using the function keyword
+function functionOne() {  // function declaration - with function keyword
+    console.log("Function operation")    
+}
+
+// using function expression
+// let functionTwo 
+let functionTwo = function () {
+    console.log("Function operation Two")  
 }
 
 
-// function <name of function>() {operation to execute}
-// funcA() //function invocation
+// Arrow function
+// let arrowFunction
+let arrowFunction = () => console.log("Function operation Three: Arrow Function")
 
-// arrow functions
-const funcB = () => console.log("I am function B") // arrow function declaration
-// funcB() // function invocation
 
-function funcC(parameterOne) { // function declaration with parameters
-    return parameterOne
-    // console.log("I am func C: ", parameterTwo)
+
+functionOne() // function invocation
+functionTwo() // function invocation
+arrowFunction() // function invocation
+
+// functions always evaluate to their return value-when invoked
+
+function withReturnValue() {
+    // debugger
+    let firstNum = 2+2
+    let secondNum = 3+3
+    return firstNum + secondNum
 }
 
-funcC(200) // function invoked with arguments
+// console.log(withReturnValue()) // is the same as This is a return value
 
-// a function with a return value, evaluates to its return value when invoked
-funcC(200) // "I am func C: ", parameterOne
-// console.log(funcC(200) + 5)
-
-// closures and scope
-
-const globalVariable = 5 // global scope
-useGlobalScopedVariable()
-
-function useGlobalScopedVariable() {
-    const functionScopedVariable = 6 // function scope
-    // console.log("Function scoped variable: ", functionScopedVariable)
-    
-    if(functionScopedVariable) {
-        let blockScoped = "7" // block Scope
-        console.log("Global scoped variable: ", globalVariable)
-        console.log("Function scoped variable: ", functionScopedVariable)
-        console.log("Block scoped variable: ", blockScoped)        
-    }
+// functions with parameters
+function withParameters(par1, par2) { // at the point of declaration, the variables you declare the function to expect are called parameters
+    return par1+par2
 }
 
-//arrow functions cannot be hoisted
-const anArrowFunction = () => {console.log("An Arrow function")}
-// anArrowFunction()
-
-// console.log("Global scoped variable: ", functionScopedVariable)
-// unhoisted variables cannot be accessed before initialization
-
-// methods= a method is a function that is native(belongs)to an object
-
-const objectWithMethod = {
-    name: "Shahemen",
-    method: () => {console.log("I am a method")}
+function withDefaultParameters (par1=6, par2=8) { // setting default values for parameters at point of declaration
+    return par1+par2
 }
 
-objectWithMethod.method()
+
+
+console.log(withParameters(5, 7)) // at the point of invocation, the values passed into a function that accepts parameters, are called Arguments
+console.log(withDefaultParameters(7))
+
+// higher order functions and callback functions
+// what is a higher order function: a function that can accept other functions as arguments, return functions, or both
+
+function higherOrderFunctionOne (par) { //takes a parameter
+    // debugger
+    return par() // returns invocation of parameter
+}
+function higherOrderFunctionTwo () { 
+    return function () {console.log("returned function")}
+}
+
+// higherOrderFunctionOne(withReturnValue)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
