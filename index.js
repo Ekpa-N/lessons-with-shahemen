@@ -13,18 +13,18 @@
 // Arrays []
 // Objects {}
 
-const testArray = ["item 1", "item 2", "item 3", "item 4", {name: "Shahemen", age: 18} ] // store their data in index positions
+const testArray = ["item 1", "item 2", "item 3", "item 4", { name: "Shahemen", age: 18 }] // store their data in index positions
 //////////////////     0        1           2       3                  4
 let testObject = { // store data(called properties) in key:value pairs
     name: "Shahemen", // variable assignment // similar to let name = Shahemen
     age: 18,
-    arrayInObject: ["item 1", "item 2", "item 3", "item 4", {name: "Shahemen", age: 18}]
+    arrayInObject: ["item 1", "item 2", "item 3", "item 4", { name: "Shahemen", age: 18 }]
 }
 
- // data from arrays is retrieved by referencing the index position of the item
+// data from arrays is retrieved by referencing the index position of the item
 //  console.log("from array: ", testArray[4])
- 
- // data is retrieved from objects by referencing the key through dot notation
+
+// data is retrieved from objects by referencing the key through dot notation
 //  console.log("from object: ", testObject.arrayInObject[4].name)
 
 
@@ -57,13 +57,13 @@ let r = 4 // declaration + assignment
 
 // using the function keyword
 function functionOne() {  // function declaration - with function keyword
-    console.log("Function operation")    
+    console.log("Function operation")
 }
 
 // using function expression
 // let functionTwo 
 let functionTwo = function () {
-    console.log("Function operation Two")  
+    console.log("Function operation Two")
 }
 
 
@@ -81,8 +81,8 @@ arrowFunction() // function invocation
 
 function withReturnValue() {
     // debugger
-    let firstNum = 2+2
-    let secondNum = 3+3
+    let firstNum = 2 + 2
+    let secondNum = 3 + 3
     return firstNum + secondNum
 }
 
@@ -90,11 +90,11 @@ function withReturnValue() {
 
 // functions with parameters
 function withParameters(par1, par2) { // at the point of declaration, the variables you declare the function to expect are called parameters
-    return par1+par2
+    return par1 + par2
 }
 
-function withDefaultParameters (par1=6, par2=8) { // setting default values for parameters at point of declaration
-    return par1+par2
+function withDefaultParameters(par1 = 6, par2 = 8) { // setting default values for parameters at point of declaration
+    return par1 + par2
 }
 
 
@@ -105,17 +105,88 @@ console.log(withDefaultParameters(7))
 // higher order functions and callback functions
 // what is a higher order function: a function that can accept other functions as arguments, return functions, or both
 
-function higherOrderFunctionOne (par) { //takes a parameter
+function higherOrderFunctionOne(par) { //takes a parameter
     // debugger
     return par() // returns invocation of parameter
 }
-function higherOrderFunctionTwo () { 
-    return function () {console.log("returned function")}
+function higherOrderFunctionTwo() {
+    return function () { console.log("returned function") }
 }
 
 // higherOrderFunctionOne(withReturnValue)
 
+function hocA() { // is this a higher order function? No
+    return withReturnValue()
+}
 
+function hocB(par = (arg) => arg + 2) { // is this a higher order function? Yes
+    return par
+}
+
+function hocC(par = (arg) => arg + 2) { // is this a higher order function? Yes
+    return par()
+}
+
+// what is a callback function: Any function that is passed as an argument to another function so that it can be executed/invoked in that other function
+
+
+// console.log(hocB(hocC)(withReturnValue))
+
+
+hocB(hocC)(withReturnValue) //IIFE- Immediately Invoked Function Expression 
+hocC(withReturnValue)
+// isAlsoAHigherOrderFunctionToo(withReturnValue)
+
+// function(function) | higherOrderFunction(callBackFunction)
+
+// Method: A method is a function that is a property of an object || All methods are functions but technically not all functions are methods
+
+let aMethodObject = { // objects store their data(properties) in key:value pairs
+    name: "Shahemen", // is equivalent to name = "Shahemen"
+    aMethod: function () { return "I am a method." }
+}
+
+console.log(aMethodObject.aMethod())
+
+
+// truthy and falsy values
+// truthy - evaluate to something eg: 1,2, true, "string"
+// falsy - evaluates to nothing eg: 0, null, undefined, NaN, false, ""
+
+
+// conditional operators and statements if, else, else if
+// comparison operators ==. ===, &&, ||, !, >, <
+
+// operator(condition) {
+//     operation to execute
+// }
+
+
+const isFalse = false
+const isFalseToo = true
+const isFalseThree = false
+
+
+
+
+
+// if(((2 == 2) && (isFalse != false)) || ((2 == 2) && (isFalse == false))) {
+//     console.log("Not true")
+// }
+
+function testingLogicalOperators() {
+    if (isFalse !== false) { // the state of this condition is true/truthy
+        console.log("False state holds true")
+        return
+    }
+    if (isFalseToo !== false) {
+        console.log("Else too")
+        return
+    }
+    console.log("Else")
+}
+
+testingLogicalOperators()
 
 
 
