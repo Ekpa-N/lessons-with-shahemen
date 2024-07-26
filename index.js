@@ -218,7 +218,7 @@ const objectForThis = {
     nestedObject: {
         nestedMethodToBind: logThis,
     },
-    randomMethod: function () {console.log("Random Method")}
+    randomMethod: function () { console.log("Random Method") }
 }
 // logThis()
 // console.log(this) // what is this? log("")
@@ -229,20 +229,55 @@ const objectForThis = {
 // 3. new keyword binding and constructors
 // what is a constructor: it is a special function that creates and initializes an object instance
 
- function Vehicle(brand, colour) { // constructor declaration
+
+
+
+
+// when a constructor is invoked
+// constructor(
+// object is initialized
+// properties are declared and assigned argument values
+// initialized object is returned
+// )
+function Vehicle(brand, colour) { // constructor declaration
     this.b = brand, // brand:brand/ key:value pair // declaration and assignment
     this.c = colour
- }
+}
+
+function VehicleType(brand, colour, type) {
+    // vehicleType object is initialized
+    Vehicle.call(this, brand, colour)
+    this.type = type
+}
+
+VehicleType.prototype = Object.create(Vehicle.prototype)
+
+const vehicleTypeOne = new VehicleType("BMX", "Red", "Bicycle")
+
+function drive() {
+    console.log(this.b + " can drive")
+}
+
+function toRide() {
+    console.log(this.type + "is to be riden")
+} 
+Vehicle.prototype.canDrive = drive
+VehicleType.prototype.canRide = toRide
 
 
 
- Vehicle("Volkswagen", "Red") // the this will point to the window
 
- const newVehicleOne = new Vehicle("Nissan", "Red")
- const newVehicleTwo = new Vehicle("Toyota", "Yellow")
- const newVehicleThree = new Vehicle("Mercedes", "Blue")
 
-//  console.log(newVehicleOne)
+Vehicle("Volkswagen", "Red") // the this will point to the window
+
+const newVehicleOne = new Vehicle("Nissan", "Red")
+const newVehicleTwo = new Vehicle("Toyota", "Yellow")
+const newVehicleThree = new Vehicle("Mercedes", "Blue")
+
+console.log(newVehicleOne)
+console.log(vehicleTypeOne)
+newVehicleOne.canDrive()
+//  drive.call(newVehicleOne)
 //  console.log(newVehicleTwo)
 
 
@@ -262,6 +297,12 @@ const objectForThis = {
 // objectForThis.methodToBind.call(new Vehicle("Kia", "Orange"))
 
 
+// inheritance in javascript
+
+const aNewArray = new Array()
+// const aNewArray = []
+
+console.log(aNewArray)
 
 
 
