@@ -13,6 +13,8 @@
 // Arrays []
 // Objects {}
 
+
+
 const testArray = ["item 1", "item 2", "item 3", "item 4", { name: "Shahemen", age: 18 }] // store their data in index positions
 //////////////////     0        1           2       3                  4
 let testObject = { // store data(called properties) in key:value pairs
@@ -73,9 +75,9 @@ let arrowFunction = () => console.log("Function operation Three: Arrow Function"
 
 
 
-functionOne() // function invocation
-functionTwo() // function invocation
-arrowFunction() // function invocation
+// functionOne() // function invocation
+// functionTwo() // function invocation
+// arrowFunction() // function invocation
 
 // functions always evaluate to their return value-when invoked
 
@@ -99,8 +101,8 @@ function withDefaultParameters(par1 = 6, par2 = 8) { // setting default values f
 
 
 
-console.log(withParameters(5, 7)) // at the point of invocation, the values passed into a function that accepts parameters, are called Arguments
-console.log(withDefaultParameters(7))
+// console.log(withParameters(5, 7)) // at the point of invocation, the values passed into a function that accepts parameters, are called Arguments
+// console.log(withDefaultParameters(7))
 
 // higher order functions and callback functions
 // what is a higher order function: a function that can accept other functions as arguments, return functions, or both
@@ -146,7 +148,7 @@ let aMethodObject = { // objects store their data(properties) in key:value pairs
     aMethod: function () { return "I am a method." }
 }
 
-console.log(aMethodObject.aMethod())
+// console.log(aMethodObject.aMethod())
 
 
 // truthy and falsy values
@@ -186,7 +188,86 @@ function testingLogicalOperators() {
     console.log("Else")
 }
 
-testingLogicalOperators()
+// testingLogicalOperators()
+
+// What is the 'this' keyword in javascript // it is a self referencing variable that points to the object that owns the method using it
+// binding methods of 'this' in javascript
+
+// let x // declaration of x
+// x = 5 // assignment of 2 to x
+
+// let y = x
+// y = y + 5
+
+// let n = 10 // declaration +n assignment of 10 to n
+// 1. implicit binding 
+// console.log("the this:", this) // points to the window object by default
+
+function logThis() {
+    console.log("this is the this: ", this) // this 'this' currently points to the window object
+}
+
+let anotherLogThis = function () { // this style of  function declaration is called function expression
+    console.log("this is the this: ", this) // this 'this' currently points to the window object
+}
+
+// 2. method binding
+const objectForThis = {
+    name: "Shahemen",
+    methodToBind: logThis,
+    nestedObject: {
+        nestedMethodToBind: logThis,
+    },
+    randomMethod: function () {console.log("Random Method")}
+}
+// logThis()
+// console.log(this) // what is this? log("")
+// objectForThis.randomMethod()
+
+// objectForThis.nestedObject.nestedMethodToBind()
+
+// 3. new keyword binding and constructors
+// what is a constructor: it is a special function that creates and initializes an object instance
+
+ function Vehicle(brand, colour) { // constructor declaration
+    this.b = brand, // brand:brand/ key:value pair // declaration and assignment
+    this.c = colour
+ }
+
+
+
+ Vehicle("Volkswagen", "Red") // the this will point to the window
+
+ const newVehicleOne = new Vehicle("Nissan", "Red")
+ const newVehicleTwo = new Vehicle("Toyota", "Yellow")
+ const newVehicleThree = new Vehicle("Mercedes", "Blue")
+
+//  console.log(newVehicleOne)
+//  console.log(newVehicleTwo)
+
+
+
+
+// 4. Explicit binding: is the process of binding the this keyword to any value of our choice
+// Explicit binding can be carried out in 3 ways, using call, apply, bind keywords
+// logThis("args")
+// logThis.call("this is the new this", "args")
+// logThis.apply("this is the new this",["args"])
+// const usingBindKeyword = logThis.bind("this is the new this", "args")
+// usingBindKeyword()
+
+// logThis()
+// logThis.apply(newVehicleOne,[])
+
+// objectForThis.methodToBind.call(new Vehicle("Kia", "Orange"))
+
+
+
+
+
+
+
+
 
 
 
