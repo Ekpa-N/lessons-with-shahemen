@@ -1,0 +1,2 @@
+Read about scopes, closures, methods and hoisting in javascript
+Read up on datatypes and variables, objects and arrays, operators
