@@ -241,7 +241,7 @@ const objectForThis = {
 // )
 function Vehicle(brand, colour) { // constructor declaration
     this.b = brand, // brand:brand/ key:value pair // declaration and assignment
-    this.c = colour
+        this.c = colour
 }
 
 function VehicleType(brand, colour, type) {
@@ -250,19 +250,45 @@ function VehicleType(brand, colour, type) {
     this.type = type
 }
 
-VehicleType.prototype = Object.create(Vehicle.prototype)
-
-const vehicleTypeOne = new VehicleType("BMX", "Red", "Bicycle")
-
 function drive() {
     console.log(this.b + " can drive")
 }
 
 function toRide() {
     console.log(this.type + "is to be riden")
-} 
-Vehicle.prototype.canDrive = drive
-VehicleType.prototype.canRide = toRide
+}
+
+Vehicle.prototype.canDrive = drive // adding a method to the vecicle constructor
+
+VehicleType.prototype = Object.create(Vehicle.prototype) // adding the vehicle prototype to the vehicleType prototype
+
+const vehicleTypeOne = new VehicleType("BMX", "Red", "Bicycle")
+
+
+
+VehicleType.prototype.canRide = toRide // adding a method to the vecicle constructor
+
+// ineritance using classes
+
+class VehicleTwo {
+    constructor(brand, colour) {
+        this.b = brand,
+        this.c = colour
+    }
+
+    canDrive = drive // adding a method to the vecicle constructor
+}
+
+class VehicleTypeTwo extends VehicleTwo {
+    constructor(brand, colour, type) {
+        super(brand, colour)
+        this.type = type
+    }
+
+    canRide = toRide // adding a method to the vecicle constructor
+}
+
+
 
 
 
@@ -305,7 +331,41 @@ const aNewArray = new Array()
 console.log(aNewArray)
 
 
+//Class Inheritance in Javascript
+class Dad {
+    constructor(name, age) {
+        this.name = name
+        this.age = age
+    }
 
+    greet() {
+        console.log("Hello, I am " + this.name)
+    }
+
+    canVote() {
+        if (this.age > 18) {
+            console.log(this.name + " is allowed to vote")
+        } else {
+            console.log(this.name + " is NOT allowed to vote")
+        }
+    }
+}
+
+
+const newDad = new Dad("Michael", 65)
+
+class Child extends Dad {
+    constructor(name, age) {
+        super(name, age)
+    }
+}
+
+
+
+
+
+
+// console.log(newDad)
 
 
 
