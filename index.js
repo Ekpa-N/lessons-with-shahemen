@@ -352,6 +352,7 @@ class Dad {
 }
 
 
+
 const newDad = new Dad("Michael", 65)
 
 class Child extends Dad {
@@ -366,6 +367,54 @@ class Child extends Dad {
 
 
 // console.log(newDad)
+
+// create an animal class that takes animal species and
+//  winged status as arguments in the constructor.
+
+// add a function canFly that returns true if the animal 
+// is winged or false if it is not 
+
+//create a sub class of the animal class that takes animal name and
+// has a function that logs "<Animal name> can fly" if canFly is true and 
+// "<Animal name> cannot fly if canFly is false"
+
+class AnimalOne {
+       constructor(species, isWinged){
+        this.species = species
+        this.isWinged = isWinged
+       } 
+
+       canFly() {
+        if(this.isWinged == true) {
+            return true
+        } else {
+            return false
+        }
+    }
+}
+
+class AnimalTwo extends AnimalOne {
+    constructor(species, isWinged, name) {
+        super(species, isWinged)
+        this.name = name
+    }
+
+
+    fly() {
+        if(this.canFly() == true) {
+            console.log(this.name+ " can fly")            
+        } else {
+            console.log(this.name+ " cannot fly")
+
+        }
+    }
+}
+
+
+const newAnimalOne = new AnimalOne("cat", "false")
+const newAnimalTwo = new AnimalTwo("cat", "false", "Lion")
+
+
 
 
 
