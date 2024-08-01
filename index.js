@@ -241,7 +241,7 @@ const objectForThis = {
 // )
 function Vehicle(brand, colour) { // constructor declaration
     this.b = brand, // brand:brand/ key:value pair // declaration and assignment
-        this.c = colour
+    this.c = colour
 }
 
 function VehicleType(brand, colour, type) {
@@ -250,45 +250,19 @@ function VehicleType(brand, colour, type) {
     this.type = type
 }
 
+VehicleType.prototype = Object.create(Vehicle.prototype)
+
+const vehicleTypeOne = new VehicleType("BMX", "Red", "Bicycle")
+
 function drive() {
     console.log(this.b + " can drive")
 }
 
 function toRide() {
     console.log(this.type + "is to be riden")
-}
-
-Vehicle.prototype.canDrive = drive // adding a method to the vecicle constructor
-
-VehicleType.prototype = Object.create(Vehicle.prototype) // adding the vehicle prototype to the vehicleType prototype
-
-const vehicleTypeOne = new VehicleType("BMX", "Red", "Bicycle")
-
-
-
-VehicleType.prototype.canRide = toRide // adding a method to the vecicle constructor
-
-// ineritance using classes
-
-class VehicleTwo {
-    constructor(brand, colour) {
-        this.b = brand,
-        this.c = colour
-    }
-
-    canDrive = drive // adding a method to the vecicle constructor
-}
-
-class VehicleTypeTwo extends VehicleTwo {
-    constructor(brand, colour, type) {
-        super(brand, colour)
-        this.type = type
-    }
-
-    canRide = toRide // adding a method to the vecicle constructor
-}
-
-
+} 
+Vehicle.prototype.canDrive = drive
+VehicleType.prototype.canRide = toRide
 
 
 
@@ -362,11 +336,15 @@ class Child extends Dad {
 
 
 
-
-
-
 // console.log(newDad)
-
+class Animal{
+    constructor(species, status){
+        this.species = species
+        this.status = status
+    }
+   
+  
+}
 
 
 

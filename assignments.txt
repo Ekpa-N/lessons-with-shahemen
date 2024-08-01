@@ -13,15 +13,19 @@ DataTypes Will cover primitive and composite datatypes
 
 Primitive
 Declare a variable 'x', then assign a string value to it
+Answer: x = 18
 Emphasize the difference between the variable declaration and the variable assignment
+Asnwer:  variable declaration is the process of specifying a variable's type and identifier, but not yet assigning a value to it. 
+Variable assignment is the process of assigning a value to a variable, usually with the assignment operator (=). 
 
 declare a variable 'boolish', then assign it a falsy value that is NOT the boolean "false"
-
+Asnwer: Boolish = 0
 primitive variables MUST be undefined at declaration.
 
 Composite
 Arrays
 Declare a variable 'arrOne', then assign it an array that contains at least a number datatype, a boolean datatype, a nested array and an object.
+
 
 log to the console at least 2 items from 'arrOne' and include at least one property from any object that is an item in 'arrOne' 
  
