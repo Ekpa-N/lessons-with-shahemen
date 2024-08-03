@@ -241,7 +241,7 @@ const objectForThis = {
 // )
 function Vehicle(brand, colour) { // constructor declaration
     this.b = brand, // brand:brand/ key:value pair // declaration and assignment
-    this.c = colour
+        this.c = colour
 }
 
 function VehicleType(brand, colour, type) {
@@ -260,7 +260,7 @@ function drive() {
 
 function toRide() {
     console.log(this.type + "is to be riden")
-} 
+}
 Vehicle.prototype.canDrive = drive
 VehicleType.prototype.canRide = toRide
 
@@ -350,13 +350,13 @@ class Child extends Dad {
 // "<Animal name> cannot fly if canFly is false"
 
 class AnimalOne {
-       constructor(species, isWinged){
+    constructor(species, isWinged) {
         this.species = species
         this.isWinged = isWinged
-       } 
+    }
 
-       canFly() {
-        if(this.isWinged == true) {
+    canFly() {
+        if (this.isWinged == true) {
             return true
         } else {
             return false
@@ -372,10 +372,10 @@ class AnimalTwo extends AnimalOne {
 
 
     fly() {
-        if(this.canFly() == true) {
-            console.log(this.name+ " can fly")            
+        if (this.canFly() == true) {
+            console.log(this.name + " can fly")
         } else {
-            console.log(this.name+ " cannot fly")
+            console.log(this.name + " cannot fly")
 
         }
     }
@@ -386,8 +386,72 @@ const newAnimalOne = new AnimalOne("cat", "false")
 const newAnimalTwo = new AnimalTwo("cat", "false", "Lion")
 
 
+let newObject = {
+    name: "Voldemort",
+    race: "Despicable"
+}
+
+function CreateMailBox(name, race) {
+    this.name = name
+    this.race = race
+}
+class CreateMailBoxTwo {
+    constructor(name, race) {
+        this.name = name
+        this.race = race
+    }
+
+    getName() {
+        console.log(this.name)
+    }
+}
+
+const instanceOfCreateMailboxTwo = new CreateMailBoxTwo("Harry", "Wizard")
+
+const newCreateMailBox = new CreateMailBox("Voldemort", "Despicable")
+const newCreateMailBoxTwo = new CreateMailBox()
+// const newCreateMailBoxClass = new CreateMailBoxTwo()
 
 
+// console.log(newCreateMailBox)
+// console.log(newCreateMailBoxTwo)
+// console.log(instanceOfCreateMailboxTwo)
+
+
+class HogwartsObject{
+    constructor(studentsname, house, spell){
+        this.studentsname = studentsname
+        this.house = house
+        this.spell = spell
+    }
+
+ hogwartsMethod() {
+    console.log(this.spell)
+}
+}
+const instanceofHogwartsObject = new HogwartsObject("Harry", "gryffindor", "Expelliarmus")
+const instanceofHogwartsObjectTwo = new HogwartsObject("Malfoy", "Slytherin", "Avada Kedavra")
+
+// instanceofHogwartsObject.hogwartsMethod()
+instanceofHogwartsObjectTwo.hogwartsMethod.call(instanceofHogwartsObject)
+
+// create a class objeect for hogwarts students and it will take 
+// student name, house and favourite spell as arguments. the class should have 
+// a method that when invoked, console logs the students favourite spell
+// create another instance of the HogwartsObject class and using call external binding
+// console log the favourite spell of instance 1 by invoking the hogwartsMethod of instance 2
+
+
+
+
+// {
+//     one:"1",
+//     two:"2",
+//     three:"3",
+//     four:"4",
+//     five:"5",
+//     six:"6"
+// }
 
 
 
