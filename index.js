@@ -14,6 +14,12 @@
 // Objects {}
 
 
+// three ways of variable declaration
+// var can be both reassigned and redeclared
+// let can be reassgined but not redeclared
+// const cannot be be rassigned and redeclared
+
+
 
 const testArray = ["item 1", "item 2", "item 3", "item 4", { name: "Shahemen", age: 18 }] // store their data in index positions
 //////////////////     0        1           2       3                  4
