@@ -251,9 +251,7 @@ function VehicleType(brand, colour, type) {
 }
 
 VehicleType.prototype = Object.create(Vehicle.prototype)
-
 const vehicleTypeOne = new VehicleType("BMX", "Red", "Bicycle")
-
 function drive() {
     console.log(this.b + " can drive")
 }
@@ -263,11 +261,6 @@ function toRide() {
 }
 Vehicle.prototype.canDrive = drive
 VehicleType.prototype.canRide = toRide
-
-
-
-
-
 Vehicle("Volkswagen", "Red") // the this will point to the window
 
 const newVehicleOne = new Vehicle("Nissan", "Red")
@@ -452,6 +445,32 @@ instanceofHogwartsObjectTwo.hogwartsMethod.call(instanceofHogwartsObject)
 //     five:"5",
 //     six:"6"
 // }
+
+function ConstructOne() {
+    this.name = "String"
+    this.constructOneMethod = function () {
+       return this.name
+    }
+  }
+  ConstructOne()
+
+  const constructUno = new ConstructOne()
+
+
+  function ConstructTwo(name, method) {
+    this.name = name
+    this.constructTwoMethod =  method    
+  }
+
+  function highmethod(){
+    return ConstructTwo
+  }
+
+  const contrsuctorduece = new ConstructTwo("paskas", highmethod)
+
+  console.log(contrsuctorduece.constructTwoMethod)
+
+  
 
 
 
