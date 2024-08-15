@@ -67,7 +67,11 @@ The "method" argument should be a higher order function.
 
 
 declare a constructor "SubOne" that is a sub constructor of "ConstructTwo" above.
-In addition to the first two arguments, "SubOne" should accept an extra argument title that will be mapped to a "title" property with a value of string
+In addition to the first two arguments, "SubOne" should accept an extra argument 
+title 
+that will be mapped to a "title" property with a value of string
+
+
 
 declare a class-"ClassOne", that accepts three arguments(name, title, position) and returns the instance of an object that maps the 
 arguments to properties of the same names in the class constructor.

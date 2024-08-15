@@ -235,15 +235,18 @@ const objectForThis = {
 
 // when a constructor is invoked
 // constructor(
-// object is initialized
+// object is initialized //new Vehicle("Nissan", "Red")
 // properties are declared and assigned argument values
 // initialized object is returned
 // )
 function Vehicle(brand, colour) { // constructor declaration
     this.b = brand, // brand:brand/ key:value pair // declaration and assignment
-        this.c = colour
+    this.c = colour,
+    this.d = "third property"
+    this.e = function e() {
+        return this.c
+    }
 }
-
 function VehicleType(brand, colour, type) {
     // vehicleType object is initialized
     Vehicle.call(this, brand, colour)
@@ -261,17 +264,20 @@ function toRide() {
 }
 Vehicle.prototype.canDrive = drive
 VehicleType.prototype.canRide = toRide
-Vehicle("Volkswagen", "Red") // the this will point to the window
+// Vehicle("Volkswagen", "Red") // the this will point to the window
 
 const newVehicleOne = new Vehicle("Nissan", "Red")
 const newVehicleTwo = new Vehicle("Toyota", "Yellow")
-const newVehicleThree = new Vehicle("Mercedes", "Blue")
+const newVehicleThree = new Vehicle()
+console.log(newVehicleTwo.e())
 
-console.log(newVehicleOne)
-console.log(vehicleTypeOne)
-newVehicleOne.canDrive()
+
+// console.log("vehicle one: ", newVehicleOne)
+// console.log("vehicle two: ", newVehicleTwo)
+// console.log("vehicle three: ", newVehicleThree)
+// console.log("e: ", newVehicleOne.e)
+// console.log("vehicle constructor: ", Vehicle)
 //  drive.call(newVehicleOne)
-//  console.log(newVehicleTwo)
 
 
 
@@ -295,7 +301,7 @@ newVehicleOne.canDrive()
 const aNewArray = new Array()
 // const aNewArray = []
 
-console.log(aNewArray)
+// console.log(aNewArray)
 
 
 //Class Inheritance in Javascript
@@ -411,16 +417,16 @@ const newCreateMailBoxTwo = new CreateMailBox()
 // console.log(instanceOfCreateMailboxTwo)
 
 
-class HogwartsObject{
-    constructor(studentsname, house, spell){
+class HogwartsObject {
+    constructor(studentsname, house, spell) {
         this.studentsname = studentsname
         this.house = house
         this.spell = spell
     }
 
- hogwartsMethod() {
-    console.log(this.spell)
-}
+    hogwartsMethod() {
+        console.log(this.spell)
+    }
 }
 const instanceofHogwartsObject = new HogwartsObject("Harry", "gryffindor", "Expelliarmus")
 const instanceofHogwartsObjectTwo = new HogwartsObject("Malfoy", "Slytherin", "Avada Kedavra")
@@ -449,28 +455,36 @@ instanceofHogwartsObjectTwo.hogwartsMethod.call(instanceofHogwartsObject)
 function ConstructOne() {
     this.name = "String"
     this.constructOneMethod = function () {
-       return this.name
+        return this.name
     }
-  }
-  ConstructOne()
+}
+ConstructOne()
 
-  const constructUno = new ConstructOne()
+const constructUno = new ConstructOne()
 
 
-  function ConstructTwo(name, method) {
+function ConstructTwo(name, method) {
     this.name = name
-    this.constructTwoMethod =  method    
-  }
+    this.constructTwoMethod = method
+}
 
-  function highmethod(){
+function highmethod() {
     return ConstructTwo
-  }
+}
 
-  const contrsuctorduece = new ConstructTwo("paskas", highmethod)
+//   const contrsuctorduece = new ConstructTwo("paskas", highmethod)
 
-  console.log(contrsuctorduece.constructTwoMethod)
+//   console.log(contrsuctorduece.constructTwoMethod)
 
-  
+
+function SubOne(title) {
+    this.title = title
+}
+
+
+//   const subvariable = new SubOne("string")
+//   console.log(subvariable)
+
 
 
 
