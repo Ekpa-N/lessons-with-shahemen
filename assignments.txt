@@ -84,4 +84,17 @@ objectOfchoice = {
     thisIsAMethod: returnsThis
 }
 invoke 'thisIsAMethod' using the call explicit binding and manipulate the this to any value of choice.
+
+CONSTRUCTORS & CLASSES
+declare a constructor-"ConstructOne", that returns the instance of an object that has two properties "name" with a string value and "constructOneMethod" with a function that returns this.name
+Asnwer: const ConstructOne
+declare a constructor-"ConstructTwo", that accepts two arguments(name, method) and returns the instance of an object that maps the two arguments to two properties "name" and "constructTwoMethod". The "method" argument should be a higher order function.
+declare a constructor "SubOne" that is a sub constructor of "ConstructTwo" above. In addition to the first two arguments, "SubOne" should accept an extra argument title that will be mapped to a "title" property with a value of string.
+
+declare a class-"ClassOne", that accepts three arguments(name, title, position) and returns the instance of an object that maps the arguments to properties of the same names in the class constructor.
+declare a method in ClassOne "methodOne" that returns the position property of the class instance when invoked. 
+declare a method in ClassOne "methodTwo" that returns the title property of the class instance if the position property is less than 5 or the name property if the position is higher or equal to 5, when invoked. 
+
+declare an array "stackObjects" containing at least 10 different objects in this format {name: "string", title:"string"}
+using the map array method, loop through the array above and create a ClassOne instance for each object in the array, passing the name and title properties plus the index position of the object as the required arguments for the ClassOne invocation
 objectOfchoice.thisIsAMethod.call(higherFunction)

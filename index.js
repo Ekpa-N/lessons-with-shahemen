@@ -14,6 +14,12 @@
 // Objects {}
 
 
+// three ways of variable declaration
+// var can be both reassigned and redeclared
+// let can be reassgined but not redeclared
+// const cannot be be rassigned and redeclared
+
+
 
 const testArray = ["item 1", "item 2", "item 3", "item 4", { name: "Shahemen", age: 18 }] // store their data in index positions
 //////////////////     0        1           2       3                  4
@@ -230,13 +236,15 @@ objectForThis.randomMethod()
 // 3. new keyword binding and constructors
 // what is a constructor: it is a special function that creates and initializes an object instance
 
+// method is a function that belongs to an object
+// this references the objects that owns the method in which it is called 
 
 
 
-
-// when a constructor is invoked
+// when a constructor is invoked with the new keyword
 // constructor(
 // object is initialized
+// the constructor is added as a property to the initialized object
 // properties are declared and assigned argument values
 // initialized object is returned
 // )
@@ -244,7 +252,7 @@ function Vehicle(brand, colour) { // constructor declaration
     this.b = brand, // brand:brand/ key:value pair // declaration and assignment
     this.c = colour
 }
-
+const vehicleinstance = new Vehicle("lexus","silver")
 function VehicleType(brand, colour, type) {
     // vehicleType object is initialized
     Vehicle.call(this, brand, colour)
@@ -388,6 +396,47 @@ const newAnimalTwo = new AnimalTwo("cat", "false", "Lion")
 
 
 
+
+
+function ConstructOne() {
+    this.name = "String"
+    this.constructOneMethod = function () {
+       return this.name
+    }
+  }
+  ConstructOne()
+
+  const constructUno = new ConstructOne()
+
+
+  function ConstructTwo(name, method) {
+    this.name = name
+    this.constructTwoMethod =  method    
+  }
+
+
+  function highmethod(){
+    return ConstructTwo
+  }
+
+  const contrsuctorduece = new ConstructTwo("paskas", highmethod)
+
+  console.log(contrsuctorduece.constructTwoMethod)
+
+  function SubOne(name, method, title){
+    ConstructTwo.call(this,name, method)
+    this.title = title
+  }
+  const variableSubone = new SubOne("Shahemen", highmethod, "assignment")
+  console.log(variableSubone);
+
+  class ClassOne{
+    constructor(name, title, position){
+        this.name = name
+        this.title = title
+        this.position = position
+    }
+  }
 
 
 
