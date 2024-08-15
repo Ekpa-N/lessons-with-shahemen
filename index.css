@@ -1,96 +1,15 @@
-nav {
-    border: 1px solid blue;
-    background-color: darkblue;
+
+#grid {
+    width: 300px;
+    height: 300px;
+    border: 1px solid green;
     display: flex;
-    border-radius: 10px;
-    height: 40px;
-    /* justify-content: space-around; */
-    align-items: center;
-    padding: 0 20px 0 10px;
+    flex-wrap: wrap;
 }
 
-nav #avi {
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    border: 1px solid white;
-    background-image: url("/public/images/hero-image-one.svg");
-}
-
-#avi-holder {
-    width: 200px;
-    /* border: 1px solid white; */
-    display: flex;
-    gap: 10px;
-    align-items: center;
-}
-
-nav h5 {
-    color: white;
-    margin-left: 10px;
-}
-
-#hamburger {
-    height: 25px;
-    width: 30px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    justify-content: center;
-    gap: 5px;
-    margin-left: auto;
-}
-
-#hamburger :nth-child(n+1) {
-    background-color: white;
-    width: 80%;
-    height: 3px;
-    border-radius: 10px 0 0 10px;
-}
-
-#hamburger :nth-child(n+2) {
-    background-color: white;
-    width: 60%;
-    height: 3px;
-    border-radius: 10px 0 0 10px;
-}
-
-nav ul {
-    display: none;
-    color: white;
-    gap: 10px;
-    
-   
-}
-
-nav ul a{
-    text-decoration: none;
-    color: white;
-    list-style-type: none;
-}
-
-nav button {
-    display: none;
-    border-radius: 5px;
-    background-color: blueviolet;
-    color: white;
-}
-nav ul a:hover{
-    /* color: palevioletred; */
-    transition: 0.7s;
-    padding-top: 2px;
-    border-bottom: 5px solid purple;
-}
-@media screen and (min-width: 1024px) {
-    #hamburger {
-        display: none;
-    }
-
-    nav {
-        justify-content: space-between;
-    }
-
-    nav ul, nav button {
-        display: flex;
-    }
+.box {
+    box-sizing: border-box;
+    border: 1px solid black;
+    height: 100px;
+    width: 100px;
 }
