@@ -13,43 +13,76 @@ DataTypes Will cover primitive and composite datatypes
 
 Primitive
 Declare a variable 'x', then assign a string value to it
-Answer: x = 18
+Answer: let x
+  x= "various"
 Emphasize the difference between the variable declaration and the variable assignment
 Asnwer:  variable declaration is the process of specifying a variable's type and identifier, but not yet assigning a value to it. 
 Variable assignment is the process of assigning a value to a variable, usually with the assignment operator (=). 
 
 declare a variable 'boolish', then assign it a falsy value that is NOT the boolean "false"
-Asnwer: Boolish = 0
+Asnwer: let boolish
+boolish = 0
 primitive variables MUST be undefined at declaration.
 
 Composite
 Arrays
 Declare a variable 'arrOne', then assign it an array that contains at least a number datatype, a boolean datatype, a nested array and an object.
-
+let arrOne
+arrOne = [12, true, [], {name:"Devi"}]
 
 log to the console at least 2 items from 'arrOne' and include at least one property from any object that is an item in 'arrOne' 
- 
+ console.log(arrOne[0],arrOne[2])
+ console.log(arrOne[0])
+ console.log(arrOne[3].name)
+
 Objects
 Declare a variable 'objectOne', then assign it an object that has at least 3 properties(key-value pairs) and one of the 3 properties must be an array that contains up to 4 items of various datatypes
-
+let objectOne
+objectOne = {
+    name: "Daniel"
+    age: 22
+    objectArray :[12, "Jigsaw", undefined, true]
+}
 log to the console 2 of the properties of 'objectOne' including at least one of the items from the array stored as a property in 'objectOne'
-
+console.log(objectOne.objectArray[2])
+console.log(objectOne.name)
 Functions/Methods
 declare a function 'withFunctionKeyWord' -using the function keyword-that logs a string to the console when invoked
+function withFunctionKeyWord(){
+    console.log("string")
+}
+
 
 declare a function 'withExpression' -using a function expression-that logs a number to the console when invoked
-
+let withExpression = function(){
+    console.log(18)
+}
 declare a function 'arrowFunction' -using the arrow syntax -that logs a boolean to the console when invoked
+let arrowFunction = () => console.log(true)
 
 declare a function 'withReturnValue' -using any declaration method of choice-that returns any number value when invoked
+let withReturnValue = function(){
+    return 18
+}
 
 declare a function 'withParamValue' -using any declaration method of choice-that accepts a value as argument when invoked and returns that value
-
+let withParamValue = (num1) => num1 
 declare higher order function 'higherFunction' -using any declaration method of choice-that accepts two functions as arguments when invoked, and returns the sum of the invocations of both arguments as a return value
 
+function higherFunction(arg1, arg2){
+    let singleValue = arg1() + arg2()
+    return singleValue
+}
 declare a function 'returnsThis' -that returns the value of 'this' when invoked. Then assign it to a property 'thisIsAMethod' in an object of your choice.
 Invoke 'thisIsAMethod'
 
+ function returnsThis (){
+    return this
+ }
+ let objectOfchoice
+objectOfchoice = {
+    thisIsAMethod: returnsThis
+}
 invoke 'thisIsAMethod' using the call explicit binding and manipulate the this to any value of choice.
 
 CONSTRUCTORS & CLASSES
@@ -64,3 +97,4 @@ declare a method in ClassOne "methodTwo" that returns the title property of the 
 
 declare an array "stackObjects" containing at least 10 different objects in this format {name: "string", title:"string"}
 using the map array method, loop through the array above and create a ClassOne instance for each object in the array, passing the name and title properties plus the index position of the object as the required arguments for the ClassOne invocation
+objectOfchoice.thisIsAMethod.call(higherFunction)

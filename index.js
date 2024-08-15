@@ -81,6 +81,7 @@ let arrowFunction = () => console.log("Function operation Three: Arrow Function"
 
 
 
+
 // functionOne() // function invocation
 // functionTwo() // function invocation
 // arrowFunction() // function invocation
@@ -228,7 +229,7 @@ const objectForThis = {
 }
 // logThis()
 // console.log(this) // what is this? log("")
-// objectForThis.randomMethod()
+objectForThis.randomMethod()
 
 // objectForThis.nestedObject.nestedMethodToBind()
 
@@ -285,7 +286,7 @@ const newVehicleThree = new Vehicle("Mercedes", "Blue")
 console.log(newVehicleOne)
 console.log(vehicleTypeOne)
 newVehicleOne.canDrive()
-//  drive.call(newVehicleOne)
+ drive.call(newVehicleOne)
 //  console.log(newVehicleTwo)
 
 
@@ -294,7 +295,7 @@ newVehicleOne.canDrive()
 // 4. Explicit binding: is the process of binding the this keyword to any value of our choice
 // Explicit binding can be carried out in 3 ways, using call, apply, bind keywords
 // logThis("args")
-// logThis.call("this is the new this", "args")
+logThis.call("this is the new this", "args")
 // logThis.apply("this is the new this",["args"])
 // const usingBindKeyword = logThis.bind("this is the new this", "args")
 // usingBindKeyword()
