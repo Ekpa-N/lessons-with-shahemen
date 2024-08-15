@@ -56,7 +56,7 @@ CONSTRUCTORS & CLASSES
 declare a constructor-"ConstructOne", that returns the instance of an object that has two properties "name" with a string value and "constructOneMethod" with a function that returns this.name
 Asnwer: const ConstructOne
 declare a constructor-"ConstructTwo", that accepts two arguments(name, method) and returns the instance of an object that maps the two arguments to two properties "name" and "constructTwoMethod". The "method" argument should be a higher order function.
-declare a constructor "SubOne" that is a sub constructor of "ConstructTwo" above. In addition to the first two arguments, "SubOne" should accept an extra argument title that will be mapped to a "title" property with a value of string
+declare a constructor "SubOne" that is a sub constructor of "ConstructTwo" above. In addition to the first two arguments, "SubOne" should accept an extra argument title that will be mapped to a "title" property with a value of string.
 
 declare a class-"ClassOne", that accepts three arguments(name, title, position) and returns the instance of an object that maps the arguments to properties of the same names in the class constructor.
 declare a method in ClassOne "methodOne" that returns the position property of the class instance when invoked. 
